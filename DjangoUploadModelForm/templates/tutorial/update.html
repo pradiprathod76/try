@@ -1,0 +1,53 @@
+<h2>update</h2>
+
+<form method="POST" action="/tutorials/">
+	{% csrf_token %}
+	<div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" id="id_title" required maxlength="20" value="{{ t.title }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">category:</label>
+    <div class="col-sm-4">
+        <input type="text" name="category" id="id_category" required maxlength="100" value="{{ t.category }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">feature_image:</label>
+    <div class="col-sm-4">
+        <input type="file" accept="/image" name="feature_image" id="id_feature_image" value="{{ t.feature_image }}"/>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">attachment:</label>
+    <div class="col-sm-4">
+        <input type="file" accept="/attachment" name="attachment" id="id_attachment" value="{{ t.attachment }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Select:</label>
+    <div class="col-sm-4">
+    <select name = 'select' id="t_select" >
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+    </select>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
